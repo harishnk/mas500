@@ -6,7 +6,7 @@ import collections
 
 import json
 
-running_in_prompt = ""
+running_in_prompt = "X"
 
 if running_in_prompt == "X":
 	filepath = raw_input('Please enter the location of the file--> ')
