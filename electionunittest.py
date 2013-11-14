@@ -4,9 +4,8 @@ import unittest
 
 class ElectionResultsTest(unittest.TestCase):
 
-	def setup(self):
+	def setUp(self):
 		self.results = ElectionResults('/Users/harishnk/mas500/Programming-Style-Examples/election_results_test_file.csv')
-		assert self.results!=None
 
 	def testload(self):
 		self.results.load()
@@ -28,15 +27,15 @@ class ElectionResultsTest(unittest.TestCase):
 
 	def testCandidateCount(self):
 		self.results.load()
-		totalvotes = self.candidate_count()
+		totalvotes = self.results.candidate_count()
 		assert totalvotes.C1votes==885316
 		assert totalvotes.C2votes==1373687
 
 	def testEvaluateWinner(self):
 		self.results.load()
-		totalvotes = self.candidate_count()    
+		totalvotes = self.results.candidate_count()    
 		winner = ElectionResults.evaluate_winner(totalvotes.C1votes, totalvotes.C2votes)
-		assert winner==2	    
+		assert winner==2
 
 # if this file is run directly, run the tests
 if __name__ == "__main__":

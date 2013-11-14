@@ -50,7 +50,7 @@ class ElectionResults:
     """
     if c1votes > c2votes:
         return 1
-    elif c2votes < c1votes:
+    elif c2votes > c1votes:
         return 2
     else:
         return 0
